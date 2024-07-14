@@ -27,3 +27,4 @@ if [ $ID -ne 0 ]
     echo -e "$G you are root user so that you can proceed instalation $N"
 fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
+CHECKING()
