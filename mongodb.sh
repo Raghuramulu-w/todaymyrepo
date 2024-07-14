@@ -39,4 +39,4 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo
 #CHECKING()
 VALIDATE $? "copying"
 CHECKING()
-VALIDATE () $? "package success"
+VALIDATE $? "package success"
