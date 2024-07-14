@@ -9,5 +9,11 @@ then
 fi
 for package $@
 do 
- yum listinstalled $package
+ yum list installed $package
+  if [ $? -ne 0 ]
+   then 
+    echo "installation failed "
+    else 
+      echo "installation success"
+  fi  
   done
