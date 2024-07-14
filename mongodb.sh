@@ -14,18 +14,7 @@ VALIDATE(){
     echo "$2 success"
     fi
 }
-CHECKING(){
- for package in $@
-    do
-    dnf list installed $package
-      if [ $? -ne 0 ]
-    then 
-        dnf install $package &>> $LOGFILE
-    else
-        echo "package is already installed skipping"
-    fi
- done
-}
+
 echo "script executation started at $TIMESTAMP"
 if [ $ID -ne 0 ]
  then
@@ -35,8 +24,17 @@ if [ $ID -ne 0 ]
     echo -e "$G you are root user so that you can proceed instalation $N"
 fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
+VALIDATE $? "copying"
+for package in $@
+    do
+    dnf list installed $package
+      if [ $? -ne 0 ]
+    then 
+        dnf install $package &>> $LOGFILE
+    else
+        echo "package is already installed skipping"
+    fi
+ done
 
 #CHECKING()
-VALIDATE $? "copying"
-CHECKING()
 VALIDATE $? "package success"
