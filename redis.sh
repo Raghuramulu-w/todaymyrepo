@@ -15,10 +15,10 @@ VALIDATE(){
 }
 if [ $ID -ne 0 ]
  then 
-    echo "$R you are not root user "
+    echo -e  "$R you are not root user "
     exit 1
 else
-    echo "$G you are root user "
+    echo -e "$G you are root user "
 fi
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 dnf module enable redis:remi-6.2 -y
