@@ -41,7 +41,6 @@ done
 useradd roboshop
 mkdir -p /app
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
-#curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
 cd /app 
 unzip /tmp/user.zip
 npm install 
