@@ -25,10 +25,10 @@ fi
 #installation checking
 for package in $@
 do
- yum list installed $package
+ dnf list installed $package
  if [ $? -ne 0 ]
  then
-  yum install $package &>> $LOGFILE
+  dnf install $package &>> $LOGFILE
   else
   echo "package is already installed .... skipping" &>> $LOGFILE
   fi
