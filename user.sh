@@ -59,4 +59,4 @@ cp /home/centos/todaymyrepo/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongodb"
 dnf install mongodb-org-shell -y
 VALIDATE $? "mongodb installation "
-mongo --host MONGDB_HOST </app/schema/catalogue.js
+mongo --host MONGDB_HOST </app/schema/user.js
