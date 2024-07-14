@@ -34,6 +34,8 @@ cd /app
 unzip /tmp/cart.zip
 npm install 
 VALIDATE $? "npm instalation"
+cp /user/centos/todaymyrepo/cart.service /etc/systemd/system/cart.service
+#VALIDATE $? "npm instalation"
 systemctl daemon-reload
 systemctl enable cart 
 systemctl start cart
