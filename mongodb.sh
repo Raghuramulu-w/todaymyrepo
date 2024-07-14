@@ -14,7 +14,7 @@ if [ $ID -ne 0 ]
  else
     echo -e"$G you are root user so that you can proceed instalation $N"
 fi
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+#cp mongo.repo /etc/yum.repos.d/mongo.repo
 #VALIDATE()
  for package in $@
     do
