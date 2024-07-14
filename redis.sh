@@ -7,10 +7,10 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
     then 
-        echo "$R  $2 fail $N"
+        echo -e "$R  $2 fail $N"
         exit 1
     else
-        echo "$G $2 success $N "
+        echo -e "$G $2 success $N "
     fi
 }
 if [ $ID -ne 0 ]
