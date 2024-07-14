@@ -30,7 +30,7 @@ do
   then
        dnf install $package 
   else
-  echo -e "$Y package is already installed .... skipping $N" 
+  echo -e "$Y package is already installed .... skipping " 
   fi
 done
 #VALIDATE $? "installation"
@@ -42,7 +42,7 @@ rm -rf /usr/share/nginx/html/*
 VALIDATE $? "removing"
 curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 cd /usr/share/nginx/html
-unzip /tmp/web.zip
+unzip /tmp/web.zip 
 VALIDATE $? "unzipping"
 cp /home/centos/todaymyrepo/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 VALIDATE $? "copying "
