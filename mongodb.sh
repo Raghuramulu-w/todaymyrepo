@@ -1,12 +1,12 @@
 #!/bin/bash
-Id=$(id -u)
+ID=$(id -u)
 R="\[31m"
 G="\[32m"
 Y="\[33m"
 N="\[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0 -$TIMESTAMP.log"
-echo "$TIMESTAMP"
+echo "script executation started at $TIMESTAMP"
 if [ $ID -ne 0 ]
  then
     echo -e"$R error you are not root user "
