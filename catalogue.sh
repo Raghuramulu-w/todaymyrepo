@@ -46,6 +46,8 @@ cd /app
 unzip /tmp/catalogue.zip
 npm install 
 VALIDATE $? "npm installing"
+cp /home/centos/todaymyrepo/catalogue.service /etc/systemd/system/catalogue.service
+VALIDATE $? "copying"
 systemctl daemon-reload
 VALIDATE $? "reloaddemon"
 systemctl enable catalogue
