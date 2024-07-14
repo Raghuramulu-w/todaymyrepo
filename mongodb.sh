@@ -25,17 +25,6 @@ if [ $ID -ne 0 ]
 fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying"
-for package in $@
-    do 
-    dnf list installed $package
-    
-      if [ $? -ne 0 ]
-    then 
-        dnf install $package &>> $LOGFILE
-    else
-        echo "package is already installed skipping"
-    fi
- done
 
-#CHECKING()
-VALIDATE $? "package success"
+dnf install mongodb-org -y
+VALIDATE $? "package installation"
