@@ -7,7 +7,7 @@ then
   else
     echo "you are root user so you can proceed instalation"
 fi
-for package $@
+for package in $@
 do 
  yum list installed $package
   if [ $? -ne 0 ]
