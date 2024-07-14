@@ -11,7 +11,7 @@ VALIDATE(){
     do
     if [ $? -ne 0 ]
     then 
-        yum install $package
+        yum install $package &>> $LOGFILE
     else
         echo "package is already installed skipping"
     fi
@@ -21,6 +21,7 @@ VALIDATE(){
 if [ $ID -ne 0 ]
 then
     echo -e "$R error you are not root user "
+    exit 1
 else
     echo -e "$G you are root user so that you can proceed instalation $N"
 fi
