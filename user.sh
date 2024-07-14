@@ -1,6 +1,4 @@
 #!/bin/bash
-#!/bin/bash
-#!/bin/bash
 ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -42,7 +40,8 @@ done
 
 useradd roboshop
 mkdir -p /app
-curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
+curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
+#curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
 cd /app 
 unzip /tmp/user.zip
 npm install 
