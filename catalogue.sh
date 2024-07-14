@@ -5,6 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+MONGDB_HOST=mongodb.daws76s.fun
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 VALIDATE(){
@@ -58,4 +59,4 @@ cp /home/centos/todaymyrepo/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongodb"
 dnf install mongodb-org-shell -y
 VALIDATE $? "mongodb installation "
-mongo --host mongodb.daws76s.fun </app/schema/catalogue.js
+mongo --host MONGDB_HOST </app/schema/catalogue.js
