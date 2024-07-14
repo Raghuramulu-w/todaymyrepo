@@ -10,6 +10,7 @@ fi
 for package in $@
 do 
  yum list installed $package
+
   if [ $? -ne 0 ]
    then 
      yum install $package
@@ -18,3 +19,4 @@ do
       echo "installation already done so skipping"
   fi  
   done
+  
