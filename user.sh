@@ -1,5 +1,6 @@
 #!/bin/bash
 #!/bin/bash
+#!/bin/bash
 ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -41,18 +42,18 @@ done
 
 useradd roboshop
 mkdir -p /app
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+curl -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
 cd /app 
-unzip /tmp/catalogue.zip
+unzip /tmp/user.zip
 npm install 
 VALIDATE $? "npm installing"
-cp /home/centos/todaymyrepo/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/todaymyrepo/user.service /etc/systemd/system/user.service
 VALIDATE $? "copying"
 systemctl daemon-reload
 VALIDATE $? "reloaddemon"
-systemctl enable catalogue
+systemctl enable user
 VALIDATE $? "enableing "
-systemctl start catalogue
+systemctl start user
 VALIDATE $? "starting"
 cp /home/centos/todaymyrepo/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongodb"
