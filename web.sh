@@ -30,7 +30,7 @@ do
   then
        dnf install $package 
   else
-  echo "package is already installed .... skipping" &>>$LOGFILE
+  echo "package is already installed .... skipping" 
   fi
 done
 VALIDATE $? "installation"
