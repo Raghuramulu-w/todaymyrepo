@@ -37,5 +37,5 @@ fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 
 #CHECKING()
-VALIDATE $? "installation mongodb"
+VALIDATE $? "copying"
 CHECKING()
