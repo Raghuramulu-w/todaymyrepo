@@ -23,7 +23,7 @@ else
     echo -e "$G you are root user"
 fi
 #installation checking
-for package $@
+for package in $@
 do
  yum list installed $package
  if [$? -ne 0 ]
