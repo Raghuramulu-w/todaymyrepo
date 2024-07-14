@@ -24,8 +24,8 @@ then
 else
     echo -e "$G you are root user $N "
 fi
-dnf module disable nodejs -y
-dnf module enable nodejs:18 -y
+dnf module disable nodejs -y &>> $LOGFILE
+dnf module enable nodejs:18 -y &>> $LOGFILE
 
 #installation checking
 for package in $@
@@ -35,11 +35,10 @@ do
   then
        dnf install $package 
   else
-  echo -e "$Y package is already installed .... skipping " 
+  echo -e "$Y package is already installed .... skipping $N" 
   fi
 done
-#dnf module disable nodejs -y
-#dnf module enable nodejs:18 -y
+
 useradd roboshop
 mkdir -p /app
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
