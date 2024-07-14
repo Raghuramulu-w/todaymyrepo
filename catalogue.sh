@@ -47,6 +47,7 @@ unzip /tmp/catalogue.zip
 npm install 
 VALIDATE $? "npm installing"
 systemctl daemon-reload
+VALIDATE $? "reloaddemon"
 systemctl enable catalogue
 VALIDATE $? "enableing "
 systemctl start catalogue
