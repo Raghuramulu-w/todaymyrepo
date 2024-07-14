@@ -33,7 +33,7 @@ do
   echo -e "$Y package is already installed .... skipping $N" 
   fi
 done
-VALIDATE $? "installation"
+#VALIDATE $? "installation"
 systemctl enable nginx
 VALIDATE $? "enabling"
 systemctl start  nginx
