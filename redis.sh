@@ -8,6 +8,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo "$R  $2 fail $N"
+        exit 1
     else
         echo "$G $2 success $N "
     fi
@@ -15,6 +16,7 @@ VALIDATE(){
 if [ $ID -ne 0 ]
  then 
     echo "$R you are not root user "
+    exit 1
 else
     echo "$G you are root user "
 fi
