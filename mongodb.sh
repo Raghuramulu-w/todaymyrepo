@@ -17,6 +17,7 @@ VALIDATE(){
     fi
  done
 }
+
 if [ $ID -ne 0 ]
  then
     echo -e "$R error you are not root user "
