@@ -28,9 +28,9 @@ do
  dnf list installed $package
  if [ $? -ne 0 ]
  then
-  dnf install $package &>> $LOGFILE
+  dnf install $package &>>$LOGFILE
   else
-  echo "package is already installed .... skipping" &>> $LOGFILE
+  echo "package is already installed .... skipping" &>>$LOGFILE
   fi
 done
 VALIDATE $? "installation"
