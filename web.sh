@@ -24,8 +24,8 @@ else
 fi
 #installation checking
 for package in $@
- dnf list installed $package
- do
+do
+ dnf list installed $package &>> $LOGFILE
  if [ $? -ne 0 ]
   then
        dnf install $package 
