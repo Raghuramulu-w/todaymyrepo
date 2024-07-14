@@ -12,8 +12,9 @@ do
  yum list installed $package
   if [ $? -ne 0 ]
    then 
-    echo "installation failed "
+     yum install $package
+    echo "installation done "
     else 
-      echo "installation success"
+      echo "installation already done so skipping"
   fi  
   done
