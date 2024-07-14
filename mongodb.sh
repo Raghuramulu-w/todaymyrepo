@@ -26,8 +26,9 @@ fi
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying"
 for package in $@
+    do 
     dnf list installed $package
-    do
+    
       if [ $? -ne 0 ]
     then 
         dnf install $package &>> $LOGFILE
