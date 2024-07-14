@@ -33,4 +33,8 @@ do
   echo "package is already installed .... skipping" &>>$LOGFILE
   fi
 done
-#VALIDATE $? "installation"
+VALIDATE $? "installation"
+systemctl enable nginx
+VALIDATE $? "enabling"
+systemctl start  nginx
+VALIDATE $? "starting"
