@@ -32,7 +32,7 @@ do
  dnf list installed $package &>> $LOGFILE
  if [ $? -ne 0 ]
   then
-       dnf install $package 
+       dnf install $package -y
   else
   echo -e "$Y package is already installed .... skipping $N" 
   fi
@@ -42,7 +42,7 @@ useradd roboshop
 mkdir -p /app
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
 cd /app 
-unzip /tmp/catalogue.zip
+unzip -o /tmp/catalogue.zip
 npm install 
 VALIDATE $? "npm installing"
 cp /home/centos/todaymyrepo/catalogue.service /etc/systemd/system/catalogue.service
@@ -57,4 +57,4 @@ cp /home/centos/todaymyrepo/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongodb"
 dnf install mongodb-org-shell -y
 VALIDATE $? "mongodb installation "
-mongo --host MONGDB_HOST</app/schema/catalogue.js &>> /$LOGFILE
+mongo --host $MONGDB_HOST </app/schema/catalogue.js &>> /$LOGFILE
